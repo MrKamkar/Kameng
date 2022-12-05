@@ -13,7 +13,7 @@ To be able to use it, you must have:
 Now you are ready to start!
 
 ## Canvas
-Canvas is something like a scene. You use it when you want to create a new driving area.
+Canvas is something like a scene. You use it when you want to create a new drawing area.
 
 #### To create canvas:
 ```cs
