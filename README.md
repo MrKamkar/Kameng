@@ -7,7 +7,7 @@ To be able to use it, you must have:
 - Kameng source code with the path assigned to it in visual studio.
 
 ## To start
-1. Create a new cosmos project
+1. Create a new cosmos project in Visual Studio
 2. Write at the beginning `using KamengOS.Kameng;`
 
 Now you are ready to start!
