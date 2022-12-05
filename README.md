@@ -39,21 +39,21 @@ canvas.Fill(Colors.<color>)
 `<color>` is a color from Colors.cs
 ##### All colors:
 ```cs
-public const char Black = '0';
-public const char DarkBlue = '1';
-public const char DarkGreen = '2';
-public const char DarkRed = '3';
-public const char DarkMagenta = '4';
-public const char DarkYellow = '5';
-public const char Gray = '6';
-public const char DarkGray = '7';
-public const char Blue = '8';
-public const char Green = 'A';
-public const char Cyan = 'B';
-public const char Red = 'C';
-public const char Magenta = 'D';
-public const char Yellow = 'E';
-public const char White = 'F';
+Black = '0';
+DarkBlue = '1';
+DarkGreen = '2';
+DarkRed = '3';
+DarkMagenta = '4';
+DarkYellow = '5';
+Gray = '6';
+DarkGray = '7';
+Blue = '8';
+Green = 'A';
+Cyan = 'B';
+Red = 'C';
+Magenta = 'D';
+Yellow = 'E';
+White = 'F';
 ```
 
 ## Shape
