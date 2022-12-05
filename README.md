@@ -8,7 +8,7 @@ To be able to use it, you must have:
 
 ## To start
 1. Create a new cosmos project in Visual Studio
-2. Write at the beginning `using Kameng` and `using `Kameng.<directory>;`
+2. Write at the beginning `using Kameng;` and `using Kameng.<directory>;`
 
 Now you are ready to start!
 
