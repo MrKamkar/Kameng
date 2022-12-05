@@ -8,7 +8,7 @@ To be able to use it, you must have:
 
 ## To start
 1. Create a new cosmos project in Visual Studio
-2. Write at the beginning `using KamengOS.Kameng.<directory>;`
+2. Write at the beginning `using Kameng` and `using `Kameng.<directory>;`
 
 Now you are ready to start!
 
@@ -66,10 +66,10 @@ Shape <shape>;
 
 #### To draw square in shape:
 ```cs
-shape.DrawSquare(<x>, <y>, <side>, Colors.<color>);
+shape.DrawSquare(<position>, <side>, Colors.<color>);
 ```
 
 #### To draw rectangle in shape:
 ```cs
-shape.DrawRectangle(<x>, <y>, <width>, <height>, Colors.<color>);
+shape.DrawRectangle(<position>, <width>, <height>, Colors.<color>);
 ```
