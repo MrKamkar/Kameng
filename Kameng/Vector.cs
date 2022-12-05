@@ -10,6 +10,8 @@ namespace Kameng
     {
         public int x, y;
 
+        readonly public static Vector Zero = new Vector();
+
         public Vector(int x = 0, int y = 0)
         {
             this.x = x;

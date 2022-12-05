@@ -29,12 +29,12 @@ namespace Kameng.Display
         {
             for (int a = 0; a < shape.height; a++)
             {
-                char[] buffer = surface[shape.y + a].ToCharArray();
+                char[] buffer = surface[shape.position.y + a].ToCharArray();
                 for (int b = 0; b < shape.width; b++)
                 {
-                    if (shape.surface[a].ToCharArray()[b] != ' ') buffer[shape.x + b] = shape.surface[a].ToCharArray()[b];
+                    if (shape.surface[a].ToCharArray()[b] != ' ') buffer[shape.position.x + b] = shape.surface[a].ToCharArray()[b];
                 }
-                surface[shape.y + a] = new string(buffer);
+                surface[shape.position.y + a] = new string(buffer);
             }
         }
 

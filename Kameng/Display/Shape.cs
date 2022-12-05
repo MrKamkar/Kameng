@@ -8,28 +8,26 @@ namespace Kameng.Display
 {
     class Shape : Loader
     {
-        public int x = 0;
-        public int y = 0;
-        public Vector position { get { position = new Vector(x, y); return position; } set { x = position.x; y = position.y; } }
+        public Vector position = new Vector();
 
         public Shape(int width, int height) : base(width, height) { }
 
-        public void DrawRectangle(int x, int y, int width, int height, char color)
+        public void DrawRectangle(Vector position, int width, int height, char color)
         {
             for (int a = 0; a < height; a++)
             {
-                char[] buffer = surface[y + a].ToCharArray();
+                char[] buffer = surface[position.y + a].ToCharArray();
                 for (int b = 0; b < width; b++)
                 {
-                    buffer[x + b] = color;
+                    buffer[position.x + b] = color;
                 }
-                surface[y + a] = new string(buffer);
+                surface[position.y + a] = new string(buffer);
             }
         }
 
-        public void DrawSquare(int x, int y, int side, char color)
+        public void DrawSquare(Vector position, int side, char color)
         {
-            DrawRectangle(x, y, side, side, color);
+            DrawRectangle(position, side, side, color);
         }
     }
 }
