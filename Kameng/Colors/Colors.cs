@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kameng.Kameng
+namespace Kameng.Colors
 {
     struct Colors
     {
@@ -24,8 +24,9 @@ namespace Kameng.Kameng
         public const char Yellow = 'E';
         public const char White = 'F';
 
-        public static System.ConsoleColor GetColor(char type) {
-            switch(type)
+        public static ConsoleColor GetColor(char type)
+        {
+            switch (type)
             {
                 case Black:
                 default:

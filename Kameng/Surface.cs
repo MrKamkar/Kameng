@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kameng.Kameng
+namespace Kameng
 {
     class Surface
     {
@@ -16,7 +16,7 @@ namespace Kameng.Kameng
         {
             for (int a = 0; a < height; a++)
             {
-                string line = String.Empty;
+                string line = string.Empty;
                 for (int b = 0; b < width; b++)
                 {
                     line += ' ';

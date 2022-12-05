@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Kameng;
+using Kameng.Colors;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kameng.Kameng
+namespace Kameng.Display
 {
     class Canvas : Surface
     {
-        public Canvas(int width, int height) : base(width, height) {}
+        public Canvas(int width, int height) : base(width, height) { }
 
         public void Fill(char color)
         {
@@ -19,7 +21,7 @@ namespace Kameng.Kameng
                 {
                     buffer[b] = color;
                 }
-                surface[a] = new String(buffer);
+                surface[a] = new string(buffer);
             }
         }
 
@@ -30,19 +32,19 @@ namespace Kameng.Kameng
                 char[] buffer = surface[shape.y + a].ToCharArray();
                 for (int b = 0; b < shape.width; b++)
                 {
-                    if(shape.surface[a].ToCharArray()[b] != ' ') buffer[shape.x + b] = shape.surface[a].ToCharArray()[b];
+                    if (shape.surface[a].ToCharArray()[b] != ' ') buffer[shape.x + b] = shape.surface[a].ToCharArray()[b];
                 }
-                surface[shape.y + a] = new String(buffer);
+                surface[shape.y + a] = new string(buffer);
             }
         }
 
         public void Render()
         {
-            for(int a = 0; a < height; a++)
+            for (int a = 0; a < height; a++)
             {
-                for(int b = 0; b < width; b++)
+                for (int b = 0; b < width; b++)
                 {
-                    Console.BackgroundColor = Colors.GetColor(surface[a].ToCharArray()[b]);
+                    Console.BackgroundColor = Kameng.Colors.Colors.GetColor(surface[a].ToCharArray()[b]);
                     Console.Write(' ');
                 }
                 Console.WriteLine();
