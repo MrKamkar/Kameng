@@ -80,7 +80,7 @@ shape.DrawRectangle(<position>, <size>, Colors.<color>);
 ```
 
 ## FieldOfView
-This class is used to limit the field of view. To be able to use it, you must use its components in the code. When you want to display camera from fieldofview you have to use its shape (named camera) and assign it to your canvas then render this canvas.
+This class is used to limit the field of view. To be able to use it, you must use its components in the code. When you want to display camera from field of view you have to use its shape (named camera) and assign it to your canvas then render this canvas.
 
 #### To create field of view:
 ```cs
