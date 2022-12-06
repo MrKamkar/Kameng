@@ -10,14 +10,14 @@ namespace Kameng
     {
         public Canvas(Size size) : base(size) { }
 
-        public void Fill(char color)
+        public void Fill(Color color)
         {
             for (int y = 0; y < size.height; y++)
             {
                 char[] buffer = surface[y].ToCharArray();
                 for (int x = 0; x < size.width; x++)
                 {
-                    buffer[x] = color;
+                    buffer[x] = (char)color;
                 }
                 surface[y] = new string(buffer);
             }
@@ -42,7 +42,7 @@ namespace Kameng
             {
                 for (int x = 0; x < size.width; x++)
                 {
-                    Console.BackgroundColor = Colors.GetColor(surface[y].ToCharArray()[x]);
+                    Console.BackgroundColor = Colors.GetColor((Kameng.Color)surface[y].ToCharArray()[x]);
                     Console.Write(' ');
                 }
                 Console.WriteLine();
