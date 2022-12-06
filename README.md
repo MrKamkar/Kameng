@@ -12,37 +12,11 @@ To be able to use it, you must have:
 
 Now you are ready to start!
 
-## Canvas
-Canvas is something like a scene. You use it when you want to create a new drawing area.
+## Colors
 
-#### To create canvas:
-```cs
-Canvas <canvas> = new(<size>);
-```
+`Color.<color>` is a color from class Colors
 
-#### To fill the canvas with some color
-```cs
-canvas.Fill(Colors.<color>);
-```
-
-#### To add (draw) something to canvas:
-```cs
-canvas.Draw(shape);
-```
-shape have to be an object from Shape class
-
-#### To render canvas content:
-```cs
-canvas.Render();
-```
-
-#### To clear surface from canvas:
-```cs
-canvas.Clear();
-```
-
-`<color>` is a color from Colors.cs
-##### All colors:
+##### All available colors:
 ```cs
 Black = '0';
 DarkBlue = '1';
@@ -61,6 +35,35 @@ Yellow = 'E';
 White = 'F';
 ```
 
+## Canvas
+Canvas is something like a scene. You use it when you want to create a new drawing area.
+
+#### To create canvas:
+```cs
+Canvas <canvas> = new(<size>);
+```
+
+#### To fill the canvas with some color
+```cs
+canvas.Fill(Color.<color>);
+```
+
+#### To add (draw) something to canvas:
+```cs
+canvas.Draw(shape);
+```
+shape have to be an object from Shape class
+
+#### To render canvas content:
+```cs
+canvas.Render();
+```
+
+#### To clear surface from canvas:
+```cs
+canvas.Clear();
+```
+
 ## Shape
 shape is really the most important thing, it can be our character, background or whatever.
 
@@ -71,12 +74,12 @@ Shape <shape> = new(<size>);
 
 #### To draw square in shape:
 ```cs
-shape.DrawSquare(<position>, <side>, Colors.<color>);
+shape.DrawSquare(<position>, <side>, Color.<color>);
 ```
 
 #### To draw rectangle in shape:
 ```cs
-shape.DrawRectangle(<position>, <size>, Colors.<color>);
+shape.DrawRectangle(<position>, <size>, Color.<color>);
 ```
 
 ## FieldOfView
