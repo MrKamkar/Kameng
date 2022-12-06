@@ -17,23 +17,28 @@ Canvas is something like a scene. You use it when you want to create a new drawi
 
 #### To create canvas:
 ```cs
-Canvas <canvas>;
-```
-
-#### To add (draw) something to canvas:
-```cs
-canvas.Draw(shape)
-```
-shape have to be an object from Shape class
-
-#### To clear surface from canvas:
-```cs
-canvas.Clear();
+Canvas <canvas> = new(<size>);
 ```
 
 #### To fill the canvas with some color
 ```cs
-canvas.Fill(Colors.<color>)
+canvas.Fill(Colors.<color>);
+```
+
+#### To add (draw) something to canvas:
+```cs
+canvas.Draw(shape);
+```
+shape have to be an object from Shape class
+
+#### To render canvas content:
+```cs
+canvas.Render();
+```
+
+#### To clear surface from canvas:
+```cs
+canvas.Clear();
 ```
 
 `<color>` is a color from Colors.cs
@@ -61,7 +66,7 @@ shape is really the most important thing, it can be our character, background or
 
 #### To create shape:
 ```cs
-Shape <shape>;
+Shape <shape> = new(<size>);
 ```
 
 #### To draw square in shape:
@@ -72,4 +77,17 @@ shape.DrawSquare(<position>, <side>, Colors.<color>);
 #### To draw rectangle in shape:
 ```cs
 shape.DrawRectangle(<position>, <width>, <height>, Colors.<color>);
+```
+
+## FieldOfView
+This class is used to limit the field of view. To be able to use it, you must use its components in the code. When you want to display camera from fieldofview you have to use its shape (named camera) and assign it to your canvas then render this canvas.
+
+#### To create field of view:
+```cs
+FieldOfView <fieldOfView>;
+```
+
+#### To simulate field of view:
+```cs
+fieldOfView.Draw();
 ```
