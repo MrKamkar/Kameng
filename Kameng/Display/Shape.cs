@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kameng.Display
+namespace Kameng
 {
     class Shape : Loader
     {
-        public Vector position = new Vector();
+        public Vector position = new();
 
-        public Shape(int width, int height) : base(width, height) { }
+        public Shape(Size size) : base(size) { }
 
-        public void DrawRectangle(Vector position, int width, int height, char color)
+        public void DrawRectangle(Vector position, Size size, char color)
         {
-            for (int a = 0; a < height; a++)
+            for (int y = 0; y < size.height; y++)
             {
-                char[] buffer = surface[position.y + a].ToCharArray();
-                for (int b = 0; b < width; b++)
+                char[] buffer = surface[position.y + y].ToCharArray();
+                for (int x = 0; x < size.width; x++)
                 {
-                    buffer[position.x + b] = color;
+                    buffer[position.x + x] = color;
                 }
-                surface[position.y + a] = new string(buffer);
+                surface[position.y + y] = new string(buffer);
             }
         }
 
         public void DrawSquare(Vector position, int side, char color)
         {
-            DrawRectangle(position, side, side, color);
+            DrawRectangle(position, new Size(side, side), color);
         }
     }
 }

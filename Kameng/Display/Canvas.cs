@@ -1,54 +1,53 @@
-﻿using Kameng;
-using Kameng.Colors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kameng.Display
+namespace Kameng
 {
     class Canvas : Surface
     {
-        public Canvas(int width, int height) : base(width, height) { }
+        public Canvas(Size size) : base(size) { }
 
         public void Fill(char color)
         {
-            for (int a = 0; a < height; a++)
+            for (int y = 0; y < size.height; y++)
             {
-                char[] buffer = surface[a].ToCharArray();
-                for (int b = 0; b < width; b++)
+                char[] buffer = surface[y].ToCharArray();
+                for (int x = 0; x < size.width; x++)
                 {
-                    buffer[b] = color;
+                    buffer[x] = color;
                 }
-                surface[a] = new string(buffer);
+                surface[y] = new string(buffer);
             }
         }
 
         public void Draw(Shape shape)
         {
-            for (int a = 0; a < shape.height; a++)
+            for (int y = 0; y < shape.size.height; y++)
             {
-                char[] buffer = surface[shape.position.y + a].ToCharArray();
-                for (int b = 0; b < shape.width; b++)
+                char[] buffer = surface[shape.position.y + y].ToCharArray();
+                for (int x = 0; x < shape.size.width; x++)
                 {
-                    if (shape.surface[a].ToCharArray()[b] != ' ') buffer[shape.position.x + b] = shape.surface[a].ToCharArray()[b];
+                    if (shape.surface[y].ToCharArray()[x] != ' ') buffer[shape.position.x + x] = shape.surface[y].ToCharArray()[x];
                 }
-                surface[shape.position.y + a] = new string(buffer);
+                surface[shape.position.y + y] = new string(buffer);
             }
         }
 
         public void Render()
         {
-            for (int a = 0; a < height; a++)
+            for (int y = 0; y < size.height; y++)
             {
-                for (int b = 0; b < width; b++)
+                for (int x = 0; x < size.width; x++)
                 {
-                    Console.BackgroundColor = Kameng.Colors.Colors.GetColor(surface[a].ToCharArray()[b]);
+                    Console.BackgroundColor = Colors.GetColor(surface[y].ToCharArray()[x]);
                     Console.Write(' ');
                 }
                 Console.WriteLine();
             }
+            Console.BackgroundColor = ConsoleColor.Black;
         }
     }
 }

@@ -18,12 +18,12 @@ namespace Kameng
             this.y = y;
         }
 
-        public static Vector operator + (Vector first, Vector second)
+        public static Vector operator +(Vector first, Vector second)
         {
             return new Vector(first.x + second.x, first.y + second.y);
         }
 
-        public static Vector operator - (Vector first, Vector second)
+        public static Vector operator -(Vector first, Vector second)
         {
             return new Vector(first.x - second.x, first.y - second.y);
         }

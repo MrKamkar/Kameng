@@ -8,28 +8,26 @@ namespace Kameng
 {
     class Surface
     {
-        public int width { get; }
-        public int height { get; }
+        public Size size;
         public string[] surface;
 
         public void Clear()
         {
-            for (int a = 0; a < height; a++)
+            for (int y = 0; y < size.height; y++)
             {
                 string line = string.Empty;
-                for (int b = 0; b < width; b++)
+                for (int x = 0; x < size.width; x++)
                 {
                     line += ' ';
                 }
-                surface[a] = line;
+                surface[y] = line;
             }
         }
 
-        public Surface(int width, int height)
+        public Surface(Size size)
         {
-            this.width = width;
-            this.height = height;
-            surface = new string[height];
+            this.size = size;
+            surface = new string[size.height];
             Clear();
         }
     }
