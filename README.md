@@ -76,7 +76,7 @@ shape.DrawSquare(<position>, <side>, Colors.<color>);
 
 #### To draw rectangle in shape:
 ```cs
-shape.DrawRectangle(<position>, <width>, <height>, Colors.<color>);
+shape.DrawRectangle(<position>, <size>, Colors.<color>);
 ```
 
 ## FieldOfView
