@@ -3,8 +3,11 @@
     class Shape : Loader
     {
         public Vector position = new();
+        public Collision collision;
 
-        public Shape(Size size) : base(size) { }
+        public Shape(Size size) : base(size) {
+            collision = new(size);
+        }
 
         public void DrawRectangle(Vector position, Size size, Color color)
         {

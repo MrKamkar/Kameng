@@ -13,7 +13,7 @@
         F = 349,
         Fsharp = 370,
         G = 392,
-        Gsharp = 415,
+        Gsharp = 415
     }
 
     struct Note
@@ -33,17 +33,17 @@
             this.duration = duration;
         }
 
-        static public void Play(List<Note> notes)
+        static public void Play(IEnumerable<Note> notes)
         {
-            notes.ForEach(delegate (Note note)
+            foreach (Note note in notes)
             {
-                Console.Beep(note.frequency, note.duration);
-            });
+                note.Play();
+            }
         }
 
-        static public void Play(Note note)
+        public void Play()
         {
-            Console.Beep(note.frequency, note.duration);
+            Console.Beep(this.frequency, this.duration);
         }
     }
 }

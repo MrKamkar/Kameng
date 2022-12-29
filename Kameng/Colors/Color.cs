@@ -16,7 +16,8 @@
         Red = 'C',
         Magenta = 'D',
         Yellow = 'E',
-        White = 'F'
+        White = 'F',
+        Collision = '#'
     }
 
     struct Colors

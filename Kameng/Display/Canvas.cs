@@ -30,6 +30,21 @@
             }
         }
 
+        private bool Draw(Surface zone, Collision collision)
+        {
+            for (int y = 0; y < collision.size.height; y++)
+            {
+                char[] buffer = zone.surface[collision.position.y + y].ToCharArray();
+                for (int x = 0; x < collision.size.width; x++)
+                {
+                    if (buffer[collision.position.x + x] == '#') return false;
+                    buffer[collision.position.x + x] = '#';
+                }
+                surface[collision.position.y + y] = new string(buffer);
+            }
+                return true;
+        }
+
         public void Render()
         {
             for (int y = 0; y < size.height; y++)
@@ -42,6 +57,16 @@
                 Console.WriteLine();
             }
             Console.BackgroundColor = ConsoleColor.Black;
+        }
+
+        public bool Collide(IEnumerable<Collision> collisions)
+        {
+            Surface zone = new(size);
+            foreach (Collision collision in collisions)
+            {
+                if (!Draw(zone, collision)) return true;
+            }
+            return false;
         }
     }
 }
